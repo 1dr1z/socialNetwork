@@ -84,19 +84,20 @@ CREATE TABLE `users` (
   `num_posts` int(11) NOT NULL,
   `num_likes` int(11) NOT NULL,
   `user_closed` varchar(3) NOT NULL,
-  `friend_array` text NOT NULL
+  `friend_array` text NOT NULL,
+   `isAdmin` int DEFAULT(0)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `signup_date`, `profile_pic`, `num_posts`, `num_likes`, `user_closed`, `friend_array`) VALUES
-(11, 'Idriz', 'Mehmedovic', 'idriz_mehmedovic', 'Idriz.96@hotmail.com', 'e4e01af11debf14cbfe2685e82629e0f', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 16, 1, 'no', ',jasmin_cickusic,adis_alic,gordana_duric,'),
-(12, 'Gordana', 'Duric', 'gordana_duric', 'Gordana@hotmail.com', 'a2418116d309dfb2358bb3c310ccc5bc', '2019-11-16', 'assets/images/profile_pics/defaults/head_deep_blue.png', 3, 0, 'no', ',adis_alic,idriz_mehmedovic,'),
-(13, 'Indir', 'Karic', 'indir_karic', 'Indir@hotmail.com', '98f1b5a2506c6e4773c499a05a229ac0', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ','),
-(14, 'Adis', 'Alic', 'adis_alic', 'Adis@hotmail.com', '484190145d64b21cfde6e10aa66e3be3', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',idriz_mehmedovic,gordana_duric,'),
-(15, 'Jasmin', 'Cickusic', 'jasmin_cickusic', 'Jasmin@hotmail.com', 'd3dde2723247d8d5fc3f76dceb3d4324', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',idriz_mehmedovic,');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `signup_date`, `profile_pic`, `num_posts`, `num_likes`, `user_closed`, `friend_array`, `isAdmin`) VALUES
+(11, 'Idriz', 'Mehmedovic', 'idriz_mehmedovic', 'Idriz.96@hotmail.com', 'e4e01af11debf14cbfe2685e82629e0f', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 16, 1, 'no', ',jasmin_cickusic,adis_alic,gordana_duric,',1),
+(12, 'Gordana', 'Duric', 'gordana_duric', 'Gordana@hotmail.com', 'a2418116d309dfb2358bb3c310ccc5bc', '2019-11-16', 'assets/images/profile_pics/defaults/head_deep_blue.png', 3, 0, 'no', ',adis_alic,idriz_mehmedovic,',1),
+(13, 'Indir', 'Karic', 'indir_karic', 'Indir@hotmail.com', '98f1b5a2506c6e4773c499a05a229ac0', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',',1),
+(14, 'Adis', 'Alic', 'adis_alic', 'Adis@hotmail.com', '484190145d64b21cfde6e10aa66e3be3', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',idriz_mehmedovic,gordana_duric,',1),
+(15, 'Jasmin', 'Cickusic', 'jasmin_cickusic', 'Jasmin@hotmail.com', 'd3dde2723247d8d5fc3f76dceb3d4324', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',idriz_mehmedovic,',1);
 
 --
 -- Indexes for dumped tables
