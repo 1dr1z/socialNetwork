@@ -91,6 +91,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
+
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `signup_date`, `profile_pic`, `num_posts`, `num_likes`, `user_closed`, `friend_array`) VALUES
 (11, 'Idriz', 'Mehmedovic', 'idriz_mehmedovic', 'Idriz.96@hotmail.com', 'e4e01af11debf14cbfe2685e82629e0f', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 16, 1, 'no', ',jasmin_cickusic,adis_alic,gordana_duric,'),
 (12, 'Gordana', 'Duric', 'gordana_duric', 'Gordana@hotmail.com', 'a2418116d309dfb2358bb3c310ccc5bc', '2019-11-16', 'assets/images/profile_pics/defaults/head_deep_blue.png', 3, 0, 'no', ',adis_alic,idriz_mehmedovic,'),
