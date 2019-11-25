@@ -17,7 +17,7 @@ else {
 
 <html>
 <head>
-	<title>Welcome to Swirlfeed</title>
+	<title>Welcome to IPIA Students' Social Network</title>
 
 	<!-- Javascript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -39,7 +39,7 @@ else {
 	<div class="top_bar"> 
 
 		<div class="logo">
-			<a href="index.php">Swirlfeed!</a>
+			<a href="index.php">IPIA Students' Social Network</a>
 		</div>
 
 
@@ -66,8 +66,10 @@ else {
 
 		<nav>
 			<?php
-				//Unread notifications 
 				$user_obj = new User($con, $userLoggedIn);
+				//checking if user is admin 
+				$userIsAdmin = $user_obj->isUserAdmin();
+				//new friend requests
 				$num_requests = $user_obj->getNumberOfFriendRequests();
 			?>
 
@@ -78,9 +80,16 @@ else {
 			<a href="index.php">
 				<i class="fa fa-home fa-lg"></i>
 			</a>
-			
+			<?php
+			if($userIsAdmin){
+			?>
+			<a href="user_mgmt.php">
+			<i class="fa fa-users fa-lg"></i>
+			</a>
+			<?php
+			}?>
 			<a href="requests.php">
-				<i class="fa fa-users fa-lg"></i>
+				<i class="fa fa-user-plus fa-lg"></i>
 				<?php
 				if($num_requests > 0)
 				 echo '<span class="notification_badge" id="unread_requests">' . $num_requests . '</span>';
