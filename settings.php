@@ -24,9 +24,16 @@ include("includes/form_handlers/settings_handler.php");
 	?>
 
 	<form action="settings.php" method="POST">
-		First Name: <input type="text" name="first_name" value="<?php echo $first_name; ?>" id="settings_input"><br>
-		Last Name: <input type="text" name="last_name" value="<?php echo $last_name; ?>" id="settings_input_last_name"><br>
-		Email: <input type="text" name="email" value="<?php echo $email; ?>" id="settings_input_acc"><br>
+		<label class="label-settings" for="settings_input">First Name: </label>
+		<input class="input-settings" type="text" name="first_name" value="<?php echo $first_name; ?>" id="settings_input">
+		<label class="label-settings" for="settings_input_last_name">
+			Last Name: 
+		</label>
+		<input class="input-settings" type="text" name="last_name" value="<?php echo $last_name; ?>" id="settings_input_last_name">
+		<label class="label-settings" for="settings_input_acc">
+			Email:
+		</label>
+		 <input class="input-settings"  type="text" name="email" value="<?php echo $email; ?>" id="settings_input_acc">
 
 		<?php echo $message; ?>
 
@@ -35,9 +42,18 @@ include("includes/form_handlers/settings_handler.php");
 
 	<h4>Change Password</h4>
 	<form action="settings.php" method="POST">
-		Old Password: <input type="password" name="old_password" id="settings_input_old"><br>
-		New Password: <input type="password" name="new_password_1" id="settings_input_new"><br>
-		New Password Again: <input type="password" name="new_password_2" id="settings_input_change_passw"><br>
+		<label class="label-settings" for="settings_input_old">
+			Old Password:
+		</label>
+		 <input class="input-settings" type="password" name="old_password" id="settings_input_old">
+		 <label class="label-settings" for="settings_input_new">
+			 New Password:
+		 </label>
+		 <input class="input-settings" type="password" name="new_password_1" id="settings_input_new">
+		<label class="label-settings" for="settings_input_change_passw">
+			New Password Again:
+		</label>
+		 <input class="input-settings" type="password" name="new_password_2" id="settings_input_change_passw">
 
 		<?php echo $password_message; ?>
 

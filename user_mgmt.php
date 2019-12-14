@@ -1,6 +1,7 @@
 <?php 
 include("includes/header.php");
-$mysqli = new mysqli("localhost", "root", "", "social"); 
+// include "config/config.php";
+$mysqli = new mysqli("localhost", "root", "toor", "social"); 
 $query = "SELECT * FROM users";
  
  

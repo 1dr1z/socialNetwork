@@ -45,7 +45,7 @@ else {
 
 		<div class="search">
 
-			<form action="search.php" method="GET" name="search_form">
+			<form class='search-form-container' action="search.php" method="GET" name="search_form">
 				<input type="text" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off" id="search_text_input">
 
 				<div class="button_holder">

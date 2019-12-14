@@ -31,8 +31,8 @@ if(isset($_POST['respond_request'])) {
 
  	<style type="text/css">
 	 	.wrapper {
-	 		margin-left: 0px;
-			padding-left: 0px;
+       margin:0;
+       height: calc(100% - 70px);
 	 	}
 
  	</style>

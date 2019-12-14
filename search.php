@@ -100,7 +100,7 @@ else {
 
 			echo "<div class='search_result'>
 					<div class='searchPageFriendButtons'>
-						<form action='' method='POST'>
+						<form  action='' method='POST'>
 							" . $button . "
 							<br>
 						</form>
