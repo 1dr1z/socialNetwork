@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2019 at 12:05 PM
+-- Generation Time: Dec 22, 2019 at 01:39 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -38,6 +38,13 @@ CREATE TABLE `comments` (
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `post_body`, `posted_by`, `posted_to`, `date_added`, `removed`, `post_id`) VALUES
+(19, 'Comment 1', 'idriz_mehmedovic', 'idriz_mehmedovic', '2019-12-14 13:13:47', 'no', 80);
+
 -- --------------------------------------------------------
 
 --
@@ -66,6 +73,13 @@ CREATE TABLE `posts` (
   `deleted` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `body`, `added_by`, `user_to`, `date_added`, `user_closed`, `deleted`) VALUES
+(80, 'Post 1', 'idriz_mehmedovic', 'none', '2019-12-14 13:11:06', 'no', 'no');
+
 -- --------------------------------------------------------
 
 --
@@ -84,20 +98,20 @@ CREATE TABLE `users` (
   `num_posts` int(11) NOT NULL,
   `num_likes` int(11) NOT NULL,
   `user_closed` varchar(3) NOT NULL,
-  `friend_array` text NOT NULL
+  `friend_array` text NOT NULL,
+  `isAdmin` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `signup_date`, `profile_pic`, `num_posts`, `num_likes`, `user_closed`, `friend_array`) VALUES
-(11, 'Idriz', 'Mehmedovic', 'idriz_mehmedovic', 'Idriz.96@hotmail.com', 'e4e01af11debf14cbfe2685e82629e0f', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 16, 1, 'no', ',jasmin_cickusic,adis_alic,gordana_duric,'),
-(12, 'Gordana', 'Duric', 'gordana_duric', 'Gordana@hotmail.com', 'a2418116d309dfb2358bb3c310ccc5bc', '2019-11-16', 'assets/images/profile_pics/defaults/head_deep_blue.png', 3, 0, 'no', ',adis_alic,idriz_mehmedovic,'),
-(13, 'Indir', 'Karic', 'indir_karic', 'Indir@hotmail.com', '98f1b5a2506c6e4773c499a05a229ac0', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ','),
-(14, 'Adis', 'Alic', 'adis_alic', 'Adis@hotmail.com', '484190145d64b21cfde6e10aa66e3be3', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',idriz_mehmedovic,gordana_duric,'),
-(15, 'Jasmin', 'Cickusic', 'jasmin_cickusic', 'Jasmin@hotmail.com', 'd3dde2723247d8d5fc3f76dceb3d4324', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',idriz_mehmedovic,');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `signup_date`, `profile_pic`, `num_posts`, `num_likes`, `user_closed`, `friend_array`, `isAdmin`) VALUES
+(11, 'Idriz', 'Mehmedovic', 'idriz_mehmedovic', 'Idriz.96@hotmail.com', 'e4e01af11debf14cbfe2685e82629e0f', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 1, 0, 'no', ',jasmin_cickusic,adis_alic,gordana_duric,indir_karic,', 1),
+(12, 'Gordana', 'Duric', 'gordana_duric', 'Gordana@hotmail.com', 'a2418116d309dfb2358bb3c310ccc5bc', '2019-11-16', 'assets/images/profile_pics/defaults/head_deep_blue.png', 0, 0, 'no', ',adis_alic,idriz_mehmedovic,', 0),
+(13, 'Indir', 'Karic', 'indir_karic', 'Indir@hotmail.com', '98f1b5a2506c6e4773c499a05a229ac0', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',idriz_mehmedovic,', 0),
+(14, 'Adis', 'Alic', 'adis_alic', 'Adis@hotmail.com', '484190145d64b21cfde6e10aa66e3be3', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',idriz_mehmedovic,gordana_duric,', 0),
+(15, 'Jasmin', 'Cickusic', 'jasmin_cickusic', 'Jasmin@hotmail.com', 'd3dde2723247d8d5fc3f76dceb3d4324', '2019-11-16', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',idriz_mehmedovic,', 0);
 
 --
 -- Indexes for dumped tables
@@ -135,19 +149,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `friend_requests`
 --
 ALTER TABLE `friend_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `users`
